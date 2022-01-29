@@ -37,6 +37,11 @@
               <div class="preview-box border">
                 {{ tweet }}
               </div>
+              <tweet-post
+                :avatar="post[0].avatar"
+                :tweet="post[0].tweet"
+                :datetime="post[0].datetime"
+              ></tweet-post>
             </div>
           </div>
         </div>
@@ -47,11 +52,18 @@
 </template>
 
 <script>
+import TweetPost from '../components/TwitterBrain/TweetPost.vue';
 export default {
   name: "IndexPage",
+  components: {
+    TweetPost,
+  },
   data() {
     return {
       tweet: "",
+      post: [
+        {avatar: "https://previews.123rf.com/images/pandavector/pandavector1704/pandavector170400314/75968328-avatar-of-a-man-in-a-shirt-avatar-and-face-single-icon-in-cartoon-style-vector-symbol-stock-illustra.jpg", tweet: "Ok content", datetime: Date.now()}
+      ]
     }
   }
 };
