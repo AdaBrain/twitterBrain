@@ -12,7 +12,7 @@
             </div>
             <div class="col">
               <div class="row">
-                <input class="tweet-input" type="text">
+                <input class="tweet-input" type="text" placeholder="What's happening?">
               </div>
               <div class="row">
                 button
@@ -43,5 +43,16 @@ export default {
     border-radius: 100%;
     width: 3em;
     height: auto;
+  }
+
+  .tweet-input {
+    background-color: black;
+    color: white;
+    border: none;
+    margin-left: 1em;
+  }
+
+  .tweet-input:focus {
+    outline: none;
   }
 </style>
