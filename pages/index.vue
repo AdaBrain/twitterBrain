@@ -19,6 +19,7 @@
                     class="tweet-input"
                     type="text"
                     placeholder="What's happening?"
+                    v-model="tweet"
                   />
                 </div>
               </div>
@@ -33,7 +34,9 @@
           <div class="row">
             <div class="col">
               <p><strong>Preview</strong></p>
-              <div class="preview-box border"></div>
+              <div class="preview-box border">
+                {{ tweet }}
+              </div>
             </div>
           </div>
         </div>
@@ -46,6 +49,11 @@
 <script>
 export default {
   name: "IndexPage",
+  data() {
+    return {
+      tweet: "",
+    }
+  }
 };
 </script>
 
@@ -78,5 +86,6 @@ body {
 
 .preview-box {
   color: white;
+  font-style: italic;
 }
 </style>
