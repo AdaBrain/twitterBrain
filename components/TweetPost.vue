@@ -34,7 +34,7 @@
       <div class="col">
         <p><strong>Preview</strong></p>
         <div v-for="(tw, idx) in tweeted" :key="idx">
-          <tweet-feed :content="tw"></tweet-feed>
+          <tweet-feed :content="tw" :index="idx"></tweet-feed>
         </div>
       </div>
     </div>

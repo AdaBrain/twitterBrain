@@ -1,13 +1,13 @@
 <template>
   <div class="tweet-feed container">
-      {{ content }}
+      {{index + 1}} -- {{ content }}
   </div>
 </template>
 
 <script>
 export default {
     name: "TweetFeed",
-    props: ["content"],
+    props: ["content", "index"],
 }
 </script>
 
