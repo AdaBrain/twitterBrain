@@ -22,7 +22,9 @@
         <div class="row">
           <div class="col"></div>
           <div class="col-3">
-            <button class="btn btn-sm btn-primary">Tweet</button>
+            <button 
+            @click="onClickTweet"
+            class="btn btn-sm btn-primary">Tweet</button>
           </div>
         </div>
       </div>
@@ -44,8 +46,17 @@ export default {
   data() {
     return {
       tweet: "",
+      tweeted: []
     };
   },
+  methods: {
+      onClickTweet() {
+          this.tweeted.push(this.tweet)
+          this.tweet = ""
+
+          console.log(this.tweeted)
+      }
+  }
 };
 </script>
 
