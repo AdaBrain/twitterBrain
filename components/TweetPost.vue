@@ -16,15 +16,16 @@
               type="text"
               placeholder="What's happening?"
               v-model="tweet"
+              @keyup.enter="onClickTweet"
             />
           </div>
         </div>
         <div class="row">
           <div class="col"></div>
           <div class="col-3">
-            <button 
-            @click="onClickTweet"
-            class="btn btn-sm btn-primary">Tweet</button>
+            <button @click="onClickTweet" class="btn btn-sm btn-primary">
+              Tweet
+            </button>
           </div>
         </div>
       </div>
@@ -32,8 +33,8 @@
     <div class="row">
       <div class="col">
         <p><strong>Preview</strong></p>
-        <div class="preview-box border">
-          {{ tweet }}
+        <div v-for="(tw, idx) in tweeted" :key="idx">
+          <tweet-feed :content="tw"></tweet-feed>
         </div>
       </div>
     </div>
@@ -41,22 +42,24 @@
 </template>
 
 <script>
+import TweetFeed from "./TweetFeed.vue";
 export default {
+  components: { TweetFeed },
   name: "TweetPost",
   data() {
     return {
       tweet: "",
-      tweeted: []
+      tweeted: [],
     };
   },
   methods: {
-      onClickTweet() {
-          this.tweeted.push(this.tweet)
-          this.tweet = ""
+    onClickTweet() {
+      this.tweeted.push(this.tweet);
+      this.tweet = "";
 
-          console.log(this.tweeted)
-      }
-  }
+      console.log(this.tweeted);
+    },
+  },
 };
 </script>
 
