@@ -5,7 +5,7 @@
         <v-avatar size="30">
           <img src="/img/avataaars1.png" alt="Ada" />
         </v-avatar>
-        <h5>AdaDeSions</h5>
+        <h5>AdaDeSions x AdaBrain</h5>
       </v-card-title>
       <v-card-text>
         <v-row class="mx-0">
